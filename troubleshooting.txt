@@ -1,0 +1,4 @@
+- ban na IP, protoze repl pouziva asi vice lidi a muze se stat, ze pod stejnou IP bude vetsi provoz
+  ( stejne tak too many requests )
+   v shell > kill 1
+  tim se donuti replit prejit na jiny server

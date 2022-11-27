@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "BOTnik"
+version = "0.1.0"
+description = ""
+authors = ["Martin Mariska <mariska.martin@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.0.2"
+discord = "^1.7.3"
+giphy_client = "^1.0.0"
+pymongo = {extras = ["srv"], version = "^4.0"}
+quart = "^0.16.2"

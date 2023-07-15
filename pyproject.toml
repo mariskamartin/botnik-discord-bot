@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "BOTnik"
+name = "botnik"
 version = "0.1.0"
 description = ""
 authors = ["Martin Mariska <mariska.martin@gmail.com>"]
@@ -11,3 +11,4 @@ discord = "^1.7.3"
 giphy_client = "^1.0.0"
 pymongo = {extras = ["srv"], version = "^4.0"}
 quart = "^0.16.2"
+requests = "^2.28.1"

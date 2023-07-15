@@ -41,7 +41,7 @@ _channel_predplatne = None
 _channel_bot_logs = None
 _channel_sandbox = None
 _channel_online = None
-ALLOWED_ADMINS = ['MMartin', 'Clavet','Desetdekasalamu','TapírPapír']
+ALLOWED_ADMINS = ['MMartin', 'Clavet','Desetdekasalamu','TapírPapír','mmartin0767','tapirpapir','Desetdekasalamu#9473']
 
 
 def get_mongodb_client():
@@ -194,6 +194,7 @@ async def on_ready():
     ]
     game = discord.Game(random.choice(PLAY_ACTIVITIES))
     await client.change_presence(status=discord.Status.online, activity=game)
+    await _channel_bot_logs.send(f'ready from martin\'s HW')
     print('finished end on ready block')
 
 
@@ -382,8 +383,7 @@ async def on_message(message):
                     await message.channel.send(
                         'Spatny format! Priklad 3x 20stenkou: bot roll 3d20')
                     return
-                result = ', '.join(
-                    str(random.randint(1, limit)) for r in range(rolls))
+                result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
                 await message.channel.send(result)
 
             elif cmd == 'giphy' or cmd == 'spam':
@@ -534,7 +534,7 @@ async def keep_alive_callback():
         await utils.fetch_mtgi2(_channel_bot_logs)
 
 
-# TODO move to own pask
+# TODO move to own task
 app = Quart(__name__)
 
 
@@ -544,6 +544,5 @@ async def home():
     return 'ok'
 
 
-client.loop.create_task(
-    app.run_task(host='0.0.0.0', port=8080, use_reloader=False, debug=True))
+client.loop.create_task(app.run_task(host='0.0.0.0', port=8080, use_reloader=False, debug=True))
 client.run(os.environ['BOT_TOKEN'])
